@@ -1,26 +1,855 @@
-let slideIndex = 0;
-
-const slides = document.querySelectorAll(".slide");
-
-function showSlide(index) {
-
-    if (index >= slides.length) {
-        slideIndex = 0;
-    }
-
-    if (index < 0) {
-        slideIndex = slides.length - 1;
-    }
-
-    slides.forEach(slide => {
-        slide.classList.remove("active");
-    });
-
-    slides[slideIndex].classList.add("active");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-function changeSlide(direction) {
+:root {
+    --blue: #003b7a;
+    --dark-blue: #00264f;
+    --red: #d90000;
+    --light-red: #ff3333;
+    --white: #ffffff;
+    --light: #f5f7fa;
+    --text: #333333;
+}
 
-    slideIndex += direction;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    background: var(--white);
+}
 
-    showSlide(slideIndex);
+
+/* ================= HEADER ================= */
+
+header {
+    background: var(--blue);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 4px solid var(--red);
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.logo span {
+    display: block;
+    font-size: 26px;
+}
+
+.logo small {
+    font-size: 11px;
+    color: #ddd;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff4040;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(0, 59, 122, 0.95),
+            rgba(180, 0, 0, 0.85)
+        );
+
+    position: relative;
+}
+
+.hero-content {
+    max-width: 850px;
+    padding: 30px;
+
+    animation: fadeUp 1.5s ease;
+}
+
+.welcome {
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 8vw, 80px);
+    line-height: 1.1;
+}
+
+.hero h2 {
+    font-size: clamp(25px, 5vw, 45px);
+    color: #ffe5e5;
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.btn {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    background: var(--blue);
+    color: white;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.4s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    background: var(--red);
+}
+
+.btn-red {
+    background: var(--red);
+}
+
+.btn-red:hover {
+    background: white;
+    color: var(--red);
+}
+
+
+/* ================= STATS ================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    background: white;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.15);
+}
+
+.stat {
+    text-align: center;
+    padding: 30px;
+
+    border-right: 1px solid #ddd;
+
+    transition: .4s;
+}
+
+.stat:hover {
+    transform: translateY(-8px);
+}
+
+.stat h2 {
+    color: var(--red);
+    font-size: 35px;
+}
+
+
+/* ================= SECTIONS ================= */
+
+.section {
+    padding: 90px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    color: var(--red);
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    color: var(--blue);
+    font-size: 40px;
+}
+
+.section-title.light h2 {
+    color: white;
+}
+
+.section-title.light span {
+    color: #ff7777;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+}
+
+.about-text h3 {
+    color: var(--blue);
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+.mission-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mission-box div {
+    padding: 25px;
+
+    border-left: 6px solid var(--red);
+
+    background: var(--light);
+
+    border-radius: 10px;
+
+    transition: .4s;
+}
+
+.mission-box div:hover {
+    transform: translateX(10px);
+}
+
+.mission-box h3 {
+    color: var(--blue);
+}
+
+
+/* ================= VALUES ================= */
+
+.values {
+    padding: 90px 7%;
+    background: var(--blue);
+    color: white;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 250px;
+
+    background: white;
+    color: var(--text);
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    transition: .4s;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+}
+
+.card h3 {
+    color: var(--blue);
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+
+/* ================= ACADEMICS ================= */
+
+.academic-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.academic-card {
+    padding: 35px;
+
+    border-radius: 15px;
+
+    background: var(--light);
+
+    border-top: 6px solid var(--blue);
+
+    transition: .4s;
+}
+
+.academic-card:hover {
+    transform: translateY(-10px);
+    border-top-color: var(--red);
+}
+
+.academic-icon {
+    font-size: 50px;
+}
+
+.academic-card h3 {
+    color: var(--blue);
+    margin: 10px 0;
+}
+
+.academic-card ul {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+
+/* ================= FACILITIES ================= */
+
+.facilities {
+    background: #f5f5f5;
+}
+
+.facility-card {
+    width: 260px;
+
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    transition: .4s;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+}
+
+.facility-card:hover {
+    transform: scale(1.05);
+}
+
+.facility-card span {
+    font-size: 50px;
+}
+
+.facility-card h3 {
+    color: var(--blue);
+}
+
+
+/* ================= ACTIVITIES ================= */
+
+.activities {
+    padding: 90px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--dark-blue)
+        );
+
+    color: white;
+}
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    text-align: center;
+}
+
+.activity-grid div {
+    padding: 30px;
+
+    border: 1px solid rgba(255,255,255,.3);
+
+    border-radius: 15px;
+
+    transition: .4s;
+}
+
+.activity-grid div:hover {
+    background: var(--red);
+    transform: translateY(-10px);
+}
+
+.activity-grid span {
+    font-size: 45px;
+}
+
+
+/* ================= SLIDESHOW ================= */
+
+.slideshow {
+    max-width: 1000px;
+    height: 480px;
+
+    margin: auto;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: var(--blue);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
+
+.slide {
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: white;
+
+    padding: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--red)
+        );
+
+    animation: slideIn .8s ease;
+}
+
+.slide.active {
+    display: flex;
+}
+
+.slide h2 {
+    font-size: 45px;
+}
+
+.slide p {
+    font-size: 20px;
+}
+
+.prev,
+.next {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: rgba(0,0,0,.4);
+
+    color: white;
+
+    font-size: 30px;
+
+    padding: 10px 18px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+.prev:hover,
+.next:hover {
+    background: var(--red);
+}
+
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+
+    text-align: center;
+}
+
+.dots span {
+    display: inline-block;
+
+    width: 12px;
+    height: 12px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    margin: 5px;
+
+    cursor: pointer;
+
+    opacity: .6;
+}
+
+.dots span:hover {
+    opacity: 1;
+}
+
+
+/* ================= ADMISSIONS ================= */
+
+.admissions {
+    padding: 90px 7%;
+
+    background: var(--red);
+
+    color: white;
+
+    text-align: center;
+}
+
+.admission-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.admission-content h3 {
+    font-size: 30px;
+}
+
+.admission-steps {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 20px;
+
+    margin: 40px 0;
+}
+
+.admission-steps div {
+    padding: 25px;
+
+    background: rgba(0,0,0,.15);
+
+    border-radius: 15px;
+}
+
+.admission-steps strong {
+    font-size: 35px;
+}
+
+
+/* ================= NEWS ================= */
+
+.news-grid {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 25px;
+}
+
+.news-grid article {
+    padding: 30px;
+
+    border-radius: 15px;
+
+    background: var(--light);
+
+    transition: .4s;
+}
+
+.news-grid article:hover {
+    transform: translateY(-8px);
+}
+
+.news-grid span {
+    font-size: 40px;
+}
+
+.news-grid h3 {
+    color: var(--blue);
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact {
+    padding: 90px 7%;
+
+    background: var(--blue);
+
+    color: white;
+
+    text-align: center;
+}
+
+.contact-grid {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 25px;
+}
+
+.contact-grid div {
+    padding: 25px;
+
+    border: 1px solid rgba(255,255,255,.3);
+
+    border-radius: 15px;
+
+    transition: .4s;
+}
+
+.contact-grid div:hover {
+    background: var(--red);
+}
+
+.contact-grid h3 {
+    margin-bottom: 10px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    padding: 40px 7%;
+
+    background: var(--dark-blue);
+
+    color: white;
+
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+
+    justify-content: space-around;
+
+    gap: 40px;
+
+    margin-bottom: 30px;
+}
+
+.footer-content a {
+    display: block;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+.footer-content a:hover {
+    color: #ff5555;
+}
+
+footer hr {
+    border: none;
+
+    border-top: 1px solid rgba(255,255,255,.2);
+
+    margin-bottom: 20px;
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes slideIn {
+
+    from {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+
+        position: absolute;
+
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+
+        background: var(--blue);
+
+        flex-direction: column;
+
+        padding: 20px;
+
+        text-align: center;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .about-grid,
+    .academic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .admission-steps,
+    .news-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .slide h2 {
+        font-size: 30px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+}
