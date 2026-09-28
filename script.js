@@ -1,82 +1,26 @@
-// ================= MENU =================
+let slideIndex = 0;
 
-function toggleMenu() {
+const slides = document.querySelectorAll(".slide");
 
-    const nav = document.getElementById("navLinks");
+function showSlide(index) {
 
-    nav.classList.toggle("active");
-
-}
-
-
-// ================= VIDEO =================
-
-function openVideo() {
-
-    const modal = document.getElementById("videoModal");
-
-    modal.style.display = "flex";
-
-}
-
-
-function closeVideo() {
-
-    const modal = document.getElementById("videoModal");
-
-    modal.style.display = "none";
-
-}
-
-
-// Close video when clicking outside it
-
-window.addEventListener("click", function(event) {
-
-    const modal = document.getElementById("videoModal");
-
-    if (event.target === modal) {
-        modal.style.display = "none";
+    if (index >= slides.length) {
+        slideIndex = 0;
     }
 
-});
+    if (index < 0) {
+        slideIndex = slides.length - 1;
+    }
 
-
-// ================= CONTACT FORM =================
-
-function sendMessage(event) {
-
-    event.preventDefault();
-
-    alert(
-        "Thank you for contacting Excel Nursery and Primary School. " +
-        "We will get back to you soon."
-    );
-
-    event.target.reset();
-
-}
-
-
-// ================= CLOSE MOBILE MENU =================
-
-document.querySelectorAll(".nav-links a").forEach(function(link) {
-
-    link.addEventListener("click", function() {
-
-        document
-            .getElementById("navLinks")
-            .classList.remove("active");
-
+    slides.forEach(slide => {
+        slide.classList.remove("active");
     });
 
-});
-How to see the website
+    slides[slideIndex].classList.add("active");
+}
 
-Put the three files in the same folder:
+function changeSlide(direction) {
 
-excel-school/
-│
-├── index.html
-├── style.css
-└── script.js
+    slideIndex += direction;
+
+    showSlide(slideIndex);
