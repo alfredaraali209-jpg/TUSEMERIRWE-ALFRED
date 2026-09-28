@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Excel International Pre and Primary School</title>
 
     <link rel="stylesheet" href="style.css">
@@ -10,154 +12,649 @@
 
 <body>
 
-    <!-- Navigation -->
-    <header>
-        <nav>
-            <div class="logo">EXCEL SCHOOL</div>
+    <!-- ================= HEADER ================= -->
 
-            <ul>
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                <span>EXCEL</span>
+                <small>International School</small>
+            </div>
+
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+            <ul id="navLinks">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#academics">Academics</a></li>
-                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#admissions">Admissions</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+
         </nav>
+
     </header>
 
-    <!-- Hero Section -->
+
+    <!-- ================= HERO ================= -->
+
     <section id="home" class="hero">
 
         <div class="hero-content">
+
+            <p class="welcome">WELCOME TO</p>
+
             <h1>Excel International</h1>
+
             <h2>Pre and Primary School</h2>
 
             <p>
-                Excellence in Education, Character and Future Leadership
+                Nurturing young minds today for a brighter tomorrow.
             </p>
 
-            <a href="#about" class="button">Discover Our School</a>
+            <div class="hero-buttons">
+
+                <a href="#about" class="btn">Discover Our School</a>
+
+                <a href="#admissions" class="btn btn-red">
+                    Admissions
+                </a>
+
+            </div>
+
         </div>
 
     </section>
 
-    <!-- About -->
+
+    <!-- ================= QUICK INFORMATION ================= -->
+
+    <section class="stats">
+
+        <div class="stat">
+            <h2>100+</h2>
+            <p>Learners</p>
+        </div>
+
+        <div class="stat">
+            <h2>20+</h2>
+            <p>Teachers & Staff</p>
+        </div>
+
+        <div class="stat">
+            <h2>10+</h2>
+            <p>Classes</p>
+        </div>
+
+        <div class="stat">
+            <h2>100%</h2>
+            <p>Commitment</p>
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
     <section id="about" class="section">
-        <h2>About Our School</h2>
 
-        <p>
-            Excel International Pre and Primary School is committed to
-            providing quality education in a safe, friendly and inspiring
-            environment.
-        </p>
+        <div class="section-title">
+
+            <span>WHO WE ARE</span>
+
+            <h2>About Excel International</h2>
+
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <h3>Welcome to Our School</h3>
+
+                <p>
+                    Excel International Pre and Primary School is an
+                    educational institution committed to providing quality
+                    education to young learners.
+                </p>
+
+                <p>
+                    Our school provides a safe, supportive and inspiring
+                    environment where children can develop academically,
+                    socially, physically and creatively.
+                </p>
+
+                <p>
+                    We believe that every child has unique abilities.
+                    Through dedicated teaching and co-curricular activities,
+                    we help learners discover their talents and prepare
+                    them for the future.
+                </p>
+
+            </div>
+
+
+            <div class="mission-box">
+
+                <div>
+                    <h3>🎯 Our Mission</h3>
+
+                    <p>
+                        To provide quality education that develops
+                        knowledgeable, disciplined, creative and responsible
+                        learners.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>👁 Our Vision</h3>
+
+                    <p>
+                        To become a leading school known for academic
+                        excellence, good character and holistic development.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= VALUES ================= -->
+
+    <section class="values">
+
+        <div class="section-title light">
+
+            <span>WHAT WE BELIEVE IN</span>
+
+            <h2>Our Core Values</h2>
+
+        </div>
 
         <div class="cards">
 
             <div class="card">
-                <h3>Quality Education</h3>
+                <div class="icon">⭐</div>
+                <h3>Excellence</h3>
                 <p>
-                    We provide learners with knowledge and skills for the future.
+                    We encourage learners to always strive for their best.
                 </p>
             </div>
 
             <div class="card">
-                <h3>Experienced Teachers</h3>
+                <div class="icon">🤝</div>
+                <h3>Respect</h3>
                 <p>
-                    Our teachers encourage learners to discover and develop
-                    their abilities.
+                    We promote respect for ourselves, others and our community.
                 </p>
             </div>
 
             <div class="card">
-                <h3>Good Character</h3>
+                <div class="icon">🧠</div>
+                <h3>Creativity</h3>
                 <p>
-                    We promote discipline, respect, responsibility and teamwork.
+                    We encourage learners to think, explore and create.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">❤️</div>
+                <h3>Integrity</h3>
+                <p>
+                    We teach honesty, responsibility and good character.
                 </p>
             </div>
 
         </div>
+
     </section>
 
-    <!-- Academics -->
-    <section id="academics" class="section blue-section">
 
-        <h2>Our Academics</h2>
+    <!-- ================= ACADEMICS ================= -->
+
+    <section id="academics" class="section">
+
+        <div class="section-title">
+
+            <span>LEARNING</span>
+
+            <h2>Our Academic Programme</h2>
+
+        </div>
+
+        <div class="academic-grid">
+
+            <div class="academic-card">
+
+                <div class="academic-icon">🧸</div>
+
+                <h3>Nursery Section</h3>
+
+                <p>
+                    We provide a strong foundation for young learners through
+                    engaging classroom activities and play-based learning.
+                </p>
+
+                <ul>
+                    <li>Early literacy</li>
+                    <li>Numeracy</li>
+                    <li>Creative activities</li>
+                    <li>Social development</li>
+                </ul>
+
+            </div>
+
+
+            <div class="academic-card">
+
+                <div class="academic-icon">📚</div>
+
+                <h3>Primary Section</h3>
+
+                <p>
+                    Our primary programme develops knowledge, confidence,
+                    discipline and practical skills.
+                </p>
+
+                <ul>
+                    <li>English</li>
+                    <li>Mathematics</li>
+                    <li>Science</li>
+                    <li>Social Studies</li>
+                    <li>ICT</li>
+                </ul>
+
+            </div>
+
+
+            <div class="academic-card">
+
+                <div class="academic-icon">💻</div>
+
+                <h3>ICT Education</h3>
+
+                <p>
+                    Learners are introduced to technology and digital skills
+                    that are important for the modern world.
+                </p>
+
+                <ul>
+                    <li>Computer basics</li>
+                    <li>Digital literacy</li>
+                    <li>Educational technology</li>
+                    <li>Internet awareness</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FACILITIES ================= -->
+
+    <section id="facilities" class="section facilities">
+
+        <div class="section-title">
+
+            <span>OUR ENVIRONMENT</span>
+
+            <h2>School Facilities</h2>
+
+        </div>
 
         <div class="cards">
 
-            <div class="card">
-                <h3>Nursery</h3>
-                <p>Building a strong foundation for young learners.</p>
+            <div class="facility-card">
+                <span>🏫</span>
+                <h3>Modern Classrooms</h3>
+                <p>
+                    Comfortable learning spaces designed to support effective
+                    teaching and learning.
+                </p>
             </div>
 
-            <div class="card">
-                <h3>Primary</h3>
-                <p>Developing knowledge, confidence and practical skills.</p>
+            <div class="facility-card">
+                <span>💻</span>
+                <h3>Computer Laboratory</h3>
+                <p>
+                    A learning environment where pupils can develop digital
+                    skills.
+                </p>
             </div>
 
-            <div class="card">
-                <h3>Co-Curricular Activities</h3>
-                <p>Sports, music, art and other activities for all-round development.</p>
+            <div class="facility-card">
+                <span>📖</span>
+                <h3>Library</h3>
+                <p>
+                    A space where learners can read, research and develop
+                    a love for books.
+                </p>
+            </div>
+
+            <div class="facility-card">
+                <span>⚽</span>
+                <h3>Playground</h3>
+                <p>
+                    Space for sports, games and physical activities.
+                </p>
             </div>
 
         </div>
 
     </section>
 
-    <!-- Slideshow -->
+
+    <!-- ================= ACTIVITIES ================= -->
+
+    <section id="activities" class="activities">
+
+        <div class="section-title light">
+
+            <span>BEYOND THE CLASSROOM</span>
+
+            <h2>Student Activities</h2>
+
+        </div>
+
+        <div class="activity-grid">
+
+            <div>
+                <span>⚽</span>
+                <h3>Sports</h3>
+                <p>Football, athletics and other sporting activities.</p>
+            </div>
+
+            <div>
+                <span>🎵</span>
+                <h3>Music</h3>
+                <p>Developing musical talent and confidence.</p>
+            </div>
+
+            <div>
+                <span>🎭</span>
+                <h3>Drama</h3>
+                <p>Encouraging creativity and public speaking.</p>
+            </div>
+
+            <div>
+                <span>🎨</span>
+                <h3>Art</h3>
+                <p>Helping learners express their creativity.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SLIDESHOW ================= -->
+
     <section id="gallery" class="section">
 
-        <h2>School Gallery</h2>
+        <div class="section-title">
+
+            <span>OUR SCHOOL</span>
+
+            <h2>School Gallery</h2>
+
+        </div>
 
         <div class="slideshow">
 
             <div class="slide active">
-                <div class="slide-content">
-                    <h3>Welcome to Excel School</h3>
-                    <p>Learning today for a brighter tomorrow.</p>
+
+                <div>
+                    <h2>Welcome to Excel International</h2>
+                    <p>Learning • Character • Excellence</p>
                 </div>
+
             </div>
 
             <div class="slide">
-                <div class="slide-content">
-                    <h3>Our Learners</h3>
-                    <p>Encouraging creativity and confidence.</p>
+
+                <div>
+                    <h2>Learning Together</h2>
+                    <p>Creating a supportive learning community.</p>
                 </div>
+
             </div>
 
             <div class="slide">
-                <div class="slide-content">
-                    <h3>Our School Community</h3>
-                    <p>Growing together through education.</p>
+
+                <div>
+                    <h2>Discovering Talents</h2>
+                    <p>Every learner has something special to offer.</p>
                 </div>
+
+            </div>
+
+            <div class="slide">
+
+                <div>
+                    <h2>Growing for the Future</h2>
+                    <p>Preparing young minds for tomorrow.</p>
+                </div>
+
             </div>
 
             <button class="prev" onclick="changeSlide(-1)">❮</button>
+
             <button class="next" onclick="changeSlide(1)">❯</button>
+
+            <div class="dots">
+
+                <span onclick="currentSlide(0)"></span>
+                <span onclick="currentSlide(1)"></span>
+                <span onclick="currentSlide(2)"></span>
+                <span onclick="currentSlide(3)"></span>
+
+            </div>
 
         </div>
 
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section contact">
 
-        <h2>Contact Us</h2>
+    <!-- ================= ADMISSIONS ================= -->
 
-        <p><strong>Excel International Pre and Primary School</strong></p>
-        <p>Email: info@excelschool.com</p>
-        <p>Phone: +256 XXX XXX XXX</p>
+    <section id="admissions" class="admissions">
+
+        <div class="section-title light">
+
+            <span>JOIN US</span>
+
+            <h2>Admissions</h2>
+
+        </div>
+
+        <div class="admission-content">
+
+            <h3>Give Your Child a Strong Start</h3>
+
+            <p>
+                We welcome parents and guardians who are interested in
+                providing their children with a quality educational
+                foundation.
+            </p>
+
+            <div class="admission-steps">
+
+                <div>
+                    <strong>01</strong>
+                    <h4>Contact Us</h4>
+                    <p>Get in touch with the school for information.</p>
+                </div>
+
+                <div>
+                    <strong>02</strong>
+                    <h4>Visit the School</h4>
+                    <p>Come and learn more about our learning environment.</p>
+                </div>
+
+                <div>
+                    <strong>03</strong>
+                    <h4>Apply</h4>
+                    <p>Complete the admission process.</p>
+                </div>
+
+            </div>
+
+            <a href="#contact" class="btn">Contact Admissions</a>
+
+        </div>
 
     </section>
 
-    <!-- Footer -->
+
+    <!-- ================= NEWS ================= -->
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <span>STAY INFORMED</span>
+
+            <h2>News & Events</h2>
+
+        </div>
+
+        <div class="news-grid">
+
+            <article>
+                <span>📅</span>
+                <h3>School Opening</h3>
+                <p>
+                    Information about the beginning of the school term will
+                    be communicated to parents.
+                </p>
+            </article>
+
+            <article>
+                <span>🏆</span>
+                <h3>Sports Activities</h3>
+                <p>
+                    Learners participate in sports and physical activities
+                    throughout the school year.
+                </p>
+            </article>
+
+            <article>
+                <span>🎓</span>
+                <h3>Academic Events</h3>
+                <p>
+                    The school organizes activities that encourage academic
+                    growth and learner participation.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="contact">
+
+        <div class="section-title light">
+
+            <span>GET IN TOUCH</span>
+
+            <h2>Contact Excel International</h2>
+
+        </div>
+
+        <div class="contact-grid">
+
+            <div>
+
+                <h3>📍 School Address</h3>
+
+                <p>
+                    Excel International Pre and Primary School
+                </p>
+
+                <p>
+                    Uganda
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>📞 Telephone</h3>
+
+                <p>
+                    +256 XXX XXX XXX
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>📧 Email</h3>
+
+                <p>
+                    info@excelschool.com
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
     <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <h2>EXCEL INTERNATIONAL</h2>
+
+                <p>
+                    Pre and Primary School
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>Quick Links</h3>
+
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#academics">Academics</a>
+                <a href="#contact">Contact</a>
+
+            </div>
+
+        </div>
+
+        <hr>
+
         <p>
-            © 2026 Excel International Pre and Primary School
+            © 2026 Excel International Pre and Primary School.
+            All Rights Reserved.
         </p>
+
     </footer>
+
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
